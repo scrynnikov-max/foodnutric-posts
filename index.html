@@ -114,7 +114,7 @@ details p{font-size:16px}
 .author img{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:50% 25%;flex:none}
 .author b{display:block;font-size:18px}
 .tg{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 20px}
-footer{padding:30px 0 48px;font-size:13px;color:var(--mut)}
+footer{padding:30px 0 calc(110px + env(safe-area-inset-bottom));font-size:13px;color:var(--mut)}
 footer a{color:var(--mut)}
 footer p{font-size:13px;color:var(--mut)}
 .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(251,247,242,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s;z-index:5}
@@ -288,6 +288,7 @@ footer p{font-size:13px;color:var(--mut)}
     var on=a&&y>a.offsetTop+300;
     var gr=g.getBoundingClientRect();
     if(gr.top<h&&gr.bottom>0) on=false;
+    var f=document.querySelector('footer').getBoundingClientRect(); if(f.top<h) on=false;
     s.classList.toggle('on',!!on);
   }
   window.addEventListener('scroll',upd,{passive:true});upd();
