@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Меню на 3 дня без диет — Татьяна, нутрициолог</title>
-<meta name="description" content="Бесплатное меню на 3 дня: 12 блюд с фото, граммовки, калории и список покупок. И статья о том, почему вес возвращается после диет.">
-<meta property="og:title" content="Меню на 3 дня: пицца, бургер и шоколад — и всё равно в меру">
-<meta property="og:description" content="12 блюд с фото, граммовки, калории и список покупок — бесплатно.">
+<title>Татьяна, нутрициолог — питание без диет</title>
+<meta name="description" content="Нутрициолог Татьяна: как похудеть без диет, запретов и срывов. Бесплатное меню на 3 дня и гайд «Питание без диет: 7 шагов».">
+<meta property="og:title" content="Похудеть без диет, запретов и срывов — Татьяна, нутрициолог">
+<meta property="og:description" content="Бесплатное меню на 3 дня и гайд «Питание без диет: 7 шагов».">
 <meta property="og:image" content="https://tatiananutri.ru/assets/cover.jpg">
 <link rel="canonical" href="https://tatiananutri.ru/">
 <meta name="theme-color" content="#FBF7F2">
@@ -120,98 +120,119 @@ footer p{font-size:13px;color:var(--mut)}
 .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(251,247,242,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s;z-index:5}
 .sticky.on{transform:none}
 .sticky .btn{max-width:640px;margin:0 auto;min-height:50px;font-size:16px}
+
+/* v2: общий сайт */
+.top{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{font-family:Playfair,Georgia,serif;font-weight:700;font-size:19px}
+.logo span{color:var(--terra)}
+.top a.tg{font-size:14px;font-weight:800;color:var(--terra);text-decoration:none}
+.hero2{padding:8px 0 34px}
+.hero2 .ph{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:#eee center/cover no-repeat;margin-bottom:22px;box-shadow:0 14px 40px rgba(60,40,25,.14)}
+.hero2 h1{margin-bottom:14px}
+.hero2 .lead2{font-size:18px;color:var(--soft);margin-bottom:22px}
+.btns{display:grid;gap:10px}
+@media(min-width:760px){.hero2 .grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}.hero2 .ph{margin:0}.wrap.wide{max-width:980px}}
+.pains{display:grid;gap:10px;margin:8px 0 0}
+.pains div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:17px}
+.cards{display:grid;gap:14px}
+@media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.card .im{aspect-ratio:4/3;background:#eee center/cover no-repeat}
+.card .tx{padding:16px 18px 18px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{font-size:16px;margin:0}
+.about{display:grid;gap:20px;align-items:center}
+@media(min-width:760px){.about{grid-template-columns:.9fr 1.1fr}}
+.about .ph{border-radius:20px;aspect-ratio:4/5;background:#eee center/cover no-repeat}
+.facts2{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
+.facts2 span{background:var(--sage-l);border-radius:30px;padding:8px 14px;font-size:14px;font-weight:700;color:#4E6248}
+.freebie{display:grid;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px}
+@media(min-width:760px){.freebie{grid-template-columns:.8fr 1.2fr}}
+.freebie img{border-radius:14px;box-shadow:0 10px 26px rgba(60,40,25,.14);max-width:300px;margin:0 auto;width:100%}
+.ticks{list-style:none;margin:10px 0 18px}
+.ticks li{padding-left:28px;position:relative;margin-bottom:8px;font-size:16.5px}
+.ticks li:before{content:'✓';position:absolute;left:0;top:0;color:var(--sage);font-weight:800}
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="badge">БЕСПЛАТНО · ОТ ТАТЬЯНЫ</span>
-    <h1>Меню на 3 дня: пицца, бургер и шоколад</h1>
-    <p class="lead it">…и всё равно в меру. Без диет, без запретов, без голода.</p>
-    <img class="cover" src="assets/cover.jpg" alt="Обложка меню на 3 дня" width="700" height="993">
-    <div class="facts">
-      <div><b>12</b><span>блюд с фото и рецептами</span></div>
-      <div><b>≈1 750</b><span>ккал в день, всё посчитано</span></div>
-      <div><b>1 раз</b><span>в магазин — список покупок</span></div>
+<div class="wrap wide"><div class="top"><div class="logo">Татьяна <span>·</span> питание без диет</div><a class="tg" href="https://t.me/foodnutric">Telegram-канал →</a></div></div>
+
+<header class="hero2">
+  <div class="wrap wide"><div class="grid">
+    <div class="ph" style="background-image:url('assets/hero.jpg')" role="img" aria-label="Татьяна, нутрициолог"></div>
+    <div>
+      <div class="kicker">НУТРИЦИОЛОГ · ПИТАНИЕ БЕЗ ДИЕТ</div>
+      <h1>Похудеть без диет, запретов и срывов</h1>
+      <p class="lead2">Я Татьяна, нутрициолог. Пять лет помогаю женщинам наладить питание так, чтобы было сытно, вкусно — и вес уходил без «начну с понедельника».</p>
+      <div class="btns">
+        <a class="btn" href="#menu">Забрать меню на 3 дня — бесплатно</a>
+        <a class="btn ghost" href="#guide">Гайд «Питание без диет: 7 шагов»</a>
+      </div>
     </div>
-    <a class="btn" id="dl" href="menu.pdf" download="Меню на 3 дня без диет.pdf">⬇ Скачать меню (PDF)</a>
-    <p class="small">Откроется сразу, без регистрации</p>
-  </div>
+  </div></div>
 </header>
 
-<section style="padding-top:6px">
+<section style="padding-top:10px">
   <div class="wrap">
-    <div class="kicker">ЧТО ВНУТРИ</div>
-    <div class="strip">
-      <figure><img src="assets/pizza.jpg" alt="" loading="lazy"><figcaption>Пицца на лаваше — 400 ккал целиком</figcaption></figure>
-      <figure><img src="assets/burger.jpg" alt="" loading="lazy"><figcaption>Домашний бургер с картофельными дольками</figcaption></figure>
-      <figure><img src="assets/pasta.jpg" alt="" loading="lazy"><figcaption>Паста с курицей в сливочно-томатном соусе</figcaption></figure>
-      <figure><img src="assets/brownie.jpg" alt="" loading="lazy"><figcaption>Шоколадный брауни из нута</figcaption></figure>
-      <figure><img src="assets/syrniki.jpg" alt="" loading="lazy"><figcaption>Сырники в духовке</figcaption></figure>
-      <figure><img src="assets/teriyaki.jpg" alt="" loading="lazy"><figcaption>Курица терияки с рисом</figcaption></figure>
+    <div class="kicker">ЗНАКОМО?</div>
+    <h2>Если хоть что-то про тебя — ты по адресу</h2>
+    <div class="pains">
+      <div>Сбрасываешь на диете — и через полгода вес возвращается, иногда с запасом.</div>
+      <div>Днём держишься, а вечером ешь всё подряд.</div>
+      <div>Делишь еду на «можно» и «нельзя» — и думаешь о «нельзя» весь день.</div>
+      <div>Ешь совсем немного, а вес стоит.</div>
+      <div>Готовишь семье одно, а себе — отдельно и невкусно.</div>
     </div>
+    <p style="margin-top:16px">Дело не в силе воли. Диеты держатся на запретах, а запреты рано или поздно заканчиваются срывом. Работает другое.</p>
   </div>
 </section>
 
 <section class="article">
-  <div class="wrap">
-    <div class="kicker">ПОКА МЕНЮ СКАЧИВАЕТСЯ — 5 МИНУТ ЧТЕНИЯ</div>
-    <h2>Почему вес возвращается после диет — и что делать вместо</h2>
-
-    <p>Если ты здесь, скорее всего, одно из этого тебе знакомо:</p>
-    <ul class="know">
-      <li>Сбросила к лету 5–10 кг — к Новому году всё вернулось. Иногда с запасом.</li>
-      <li>До пятницы держишься идеально, а в выходные «срываешься» и съедаешь всё, что не ела неделю.</li>
-      <li>Знаешь наизусть, что «нельзя», но вечером всё равно оказываешься у холодильника.</li>
-      <li>«Начну с понедельника» — уже раз двадцатый.</li>
-    </ul>
-    <p>Хочу сразу сказать главное: <b>дело не в слабой силе воли.</b> Так происходит почти у всех, кто худеет через жёсткие ограничения. И у этого есть очень понятная причина.</p>
-
-    <h2>Диета держится на силе воли. А сила воли заканчивается</h2>
-    <p>Любая строгая диета устроена одинаково: убрать «вредное», урезать порции, терпеть. Первую неделю это даже приятно — весы радуют, ты молодец. А потом запускается цепочка:</p>
-    <div class="chain">
-      <div>Мало еды и много запретов</div>
-      <div>Постоянный голод и мысли о еде</div>
-      <div>Вечер пятницы, усталость — срыв</div>
-      <div>Чувство вины: «всё равно уже сорвалась»</div>
-      <div>Ешь ещё больше — и снова «с понедельника»</div>
+  <div class="wrap wide">
+    <div class="kicker">МОЙ ПОДХОД</div>
+    <h2>Три правила вместо диеты</h2>
+    <div class="cards">
+      <div class="card"><div class="im" style="background-image:url('assets/plate.jpg')"></div><div class="tx">
+        <h3>Правило тарелки</h3><p>½ — овощи, ¼ — белок, ¼ — гарнир. Работает с любой едой: дома, в столовой, в гостях. Без весов и подсчётов.</p></div></div>
+      <div class="card"><div class="im" style="background-image:url('assets/everyday.jpg')"></div><div class="tx">
+        <h3>Сытость, а не терпение</h3><p>Нормальный завтрак, обед и перекус — и вечером не тянет к холодильнику. Держаться не нужно, если ты сыта.</p></div></div>
+      <div class="card"><div class="im" style="background-image:url('assets/treat.jpg')"></div><div class="tx">
+        <h3>Без запретных продуктов</h3><p>Хлеб, паста, сладкое — всё можно. Важно, сколько и как. Когда нет запретов, срываться не с чего.</p></div></div>
     </div>
-    <p>Срыв — это не провал характера, а закономерный финал любой схемы, где ты постоянно голодная и всё время себе что-то запрещаешь. Запрещённое становится самым желанным. Поэтому чем строже диета, тем сильнее откат.</p>
-    <div class="quote">Результат даёт не самая строгая неделя, а самая обычная — которую можно повторять годами.</div>
+  </div>
+</section>
 
-    <h2>Что работает вместо: сытость, а не запреты</h2>
-    <p>Когда ты сыта, держаться не нужно — не за что. А сытость зависит не столько от количества калорий, сколько от того, <b>из чего собрана тарелка</b>. Белок и овощи насыщают надолго, гарнир даёт энергию, немного жира — вкус и удовольствие от еды.</p>
-    <p>Поэтому вместо списка запретов у меня одно правило:</p>
-    <div class="plate">
-      <img src="assets/tarelka.jpg" alt="Тарелка: овощи, курица и гречка" loading="lazy">
+<section>
+  <div class="wrap wide"><div class="about">
+    <div class="ph" style="background-image:url('assets/about.jpg')" role="img" aria-label="Татьяна"></div>
+    <div>
+      <div class="kicker">ОБО МНЕ</div>
+      <h2>Татьяна, нутрициолог</h2>
+      <p>Я сертифицированный нутрициолог и уже пять лет работаю с женщинами, которые устали от диет. Опираюсь на доказательную нутрициологию, а не на модные запреты.</p>
+      <p>Моя задача — не посадить тебя на очередное меню, а научить собирать тарелку так, чтобы ты могла есть обычную еду, которую любит твоя семья, и спокойно держать вес.</p>
+      <div class="facts2"><span>5 лет практики</span><span>без диет и запретов</span><span>обычные продукты</span></div>
+    </div>
+  </div></div>
+</section>
+
+<section id="menu" style="padding-top:6px">
+  <div class="wrap wide">
+    <div class="freebie">
+      <img src="assets/cover.jpg" alt="Меню на 3 дня" loading="lazy">
       <div>
-        <div class="kicker">ПРАВИЛО ТАРЕЛКИ</div>
-        <div class="row"><b>½</b><span>овощи и зелень — свежие, тушёные, запечённые</span></div>
-        <div class="row"><b>¼</b><span>белок — мясо, рыба, яйца, творог, бобовые</span></div>
-        <div class="row"><b>¼</b><span>гарнир — крупа, паста, хлеб, картофель</span></div>
+        <div class="kicker">БЕСПЛАТНО</div>
+        <h2 style="margin-bottom:8px">Меню на 3 дня без диет</h2>
+        <p>Чтобы попробовать, как это — есть сытно и при этом худеть.</p>
+        <ul class="ticks">
+          <li>12 простых блюд с фото и пошаговыми рецептами</li>
+          <li>граммовки и калории на порцию</li>
+          <li>заготовка на 40 минут и список покупок</li>
+        </ul>
+        <a class="btn" id="dl" href="menu.pdf" download="Меню на 3 дня без диет.pdf">⬇ Скачать меню (PDF)</a>
+        <p class="small" style="margin-top:8px;text-align:center">Без регистрации, сразу</p>
       </div>
     </div>
-    <p>Работает с любой едой: дома, в столовой, в гостях. Ничего не нужно взвешивать каждый день — достаточно один раз научиться «видеть» тарелку. И такая тарелка держит сытость 3–4 часа, поэтому вечером не тянет добирать.</p>
-
-    <h2>А сладкое?</h2>
-    <p>Можно. Правда. Когда сладкое под запретом, оно съедается тайком, стоя, целой пачкой — и с чувством вины. Когда разрешено, хватает пары кусочков к чаю.</p>
-    <p>Простое правило: сладкое — днём и после еды, а не вместо неё и не на пустой желудок вечером. Поэтому в моём меню каждый день есть десерт — брауни, шоколадный мусс, мороженое.</p>
-    <div class="sweet">
-      <img src="assets/brownie.jpg" alt="Брауни" loading="lazy">
-      <img src="assets/icecream.jpg" alt="Банановое мороженое" loading="lazy">
-    </div>
-
-    <h2>3 ошибки, из-за которых вес стоит на месте</h2>
-    <ol class="mist">
-      <li><b>Пропускать завтрак и перекус.</b><p>Кажется, что так быстрее похудеешь. На деле к вечеру голод такой, что съедается двойная порция — и ещё «что-нибудь сладенькое».</p></li>
-      <li><b>Считать, что «полезное» можно без меры.</b><p>Орехи, гранола, сухофрукты, смузи — отличная еда, но очень сытная по калориям. Большая горсть орехов (50 г) — около 300 ккал, как полноценный перекус.</p></li>
-      <li><b>Не замечать калории в напитках.</b><p>Сок, латте с сиропом, сладкий чай по пять раз в день — это может быть целый приём пищи, который не насыщает. Пить их можно, просто стоит про них помнить.</p></li>
-    </ol>
-
-    <h2>Почему 3 дня — это только начало</h2>
-    <p>Меню показывает главное: можно есть пиццу, бургер и брауни — и при этом в меру. Но три дня по готовому меню — это ещё не привычка. Привычка — это когда ты сама знаешь, что положить в тарелку в любой день, в кафе, в гостях и после тяжёлой недели. Без меню перед глазами.</p>
-    <p>Именно для этого я сделала гайд.</p>
   </div>
 </section>
 
@@ -220,21 +241,21 @@ footer p{font-size:13px;color:var(--mut)}
     <div class="gcard">
       <div class="kicker">ГАЙД ОТ ТАТЬЯНЫ</div>
       <h2 style="margin-bottom:10px">«Питание без диет: 7 шагов к результату»</h2>
-      <p>7 дней — по одному простому шагу в день, минут 15. Через неделю у тебя будет своя система питания, которую не нужно «выдерживать».</p>
+      <p>7 дней — по одному простому шагу в день, минут 15. Через неделю у тебя своя система питания, которую не нужно «выдерживать».</p>
       <div class="days"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div></div>
       <ul class="inside">
         <li><i>🍽</i><span><b>Правило тарелки</b> — как собирать её из обычных продуктов, которые и так есть дома.</span></li>
-        <li><i>✅</i><span><b>7 заданий по одному в день</b> — маленькие шаги, которые складываются в привычку.</span></li>
-        <li><i>📓</i><span><b>Дневник питания</b> — чтобы увидеть, где на самом деле «прячутся» лишние калории и вечерний голод.</span></li>
-        <li><i>🆘</i><span><b>Чек-лист «Что делать, если сорвалась»</b> — как вернуться в колею на следующий же приём пищи, без «с понедельника».</span></li>
+        <li><i>✅</i><span><b>7 заданий, по одному в день</b> — маленькие шаги, которые складываются в привычку.</span></li>
+        <li><i>📓</i><span><b>Дневник питания</b> — чтобы увидеть, где на самом деле «прячутся» лишнее и вечерний голод.</span></li>
+        <li><i>🆘</i><span><b>Чек-лист «Что делать, если сорвалась»</b> — как вернуться в колею уже на следующем приёме пищи.</span></li>
+        <li><i>🗓</i><span><b>Меню на 7 дней</b> — без весов, порции по руке, ужин сразу на завтрашний обед.</span></li>
       </ul>
-      <div class="price"><b>870 ₽</b><span>один раз, файл остаётся у тебя</span></div>
+      <div class="price"><b>870 ₽</b><span>один раз, файлы остаются у тебя</span></div>
       <a class="btn" href="https://t.me/foodnutric_bot?start=guide_site">Получить гайд в Telegram →</a>
-      <p class="small" style="margin-top:10px;text-align:center">Откроется бот @foodnutric_bot: там кнопка оплаты (карта, СБП), гайд приходит сразу после оплаты</p>
+      <p class="small" style="margin-top:10px;text-align:center">Откроется бот @foodnutric_bot: там оплата (карта, СБП), гайд приходит сразу после оплаты</p>
     </div>
-
     <div class="who">
-      <div class="yes"><h3>Гайд для тебя, если</h3><ul>
+      <div class="yes"><h3>Подойдёт, если</h3><ul>
         <li>устала от диет и откатов и хочешь просто нормально есть;</li>
         <li>не хочешь считать калории всю жизнь;</li>
         <li>готовишь на семью и не хочешь варить себе отдельно;</li>
@@ -251,20 +272,19 @@ footer p{font-size:13px;color:var(--mut)}
 <section style="padding-top:10px">
   <div class="wrap">
     <h2>Частые вопросы</h2>
-    <details><summary>У меня совсем нет времени готовить</summary><p>Шаги в гайде занимают около 15 минут в день. А блюда — обычные, на 15–20 минут, и их едят всей семьёй: отдельно для себя готовить не нужно.</p></details>
+    <details><summary>Нужно ли взвешивать еду и считать калории?</summary><p>Нет. Основной инструмент — правило тарелки и порции «по руке»: ладонь белка, кулак гарнира, половина тарелки овощей. Калории в меню — ориентир, а не обязанность.</p></details>
+    <details><summary>У меня нет времени готовить</summary><p>Блюда обычные, на 15–20 минут, а ужин сразу готовится на завтрашний обед. Отдельно для себя готовить не нужно — это еда для всей семьи.</p></details>
     <details><summary>Я уже пробовала — не получилось</summary><p>Скорее всего, ты пробовала диету — с запретами и терпением. Здесь нечего «выдерживать»: обычная еда, просто собранная иначе. Поэтому и срываться не с чего.</p></details>
-    <details><summary>Обязательно считать калории?</summary><p>Нет. Калории в меню — ориентир, чтобы было понятно, что пицца на 400 ккал вписывается в день. Основной инструмент — правило тарелки, оно работает без подсчётов.</p></details>
-    <details><summary>Как я получу гайд?</summary><p>Нажимаешь «Получить гайд», открывается Telegram-бот, там кнопка оплаты. Сразу после оплаты бот присылает PDF. Если что-то пошло не так — напиши в бот, я отвечу.</p></details>
-    <details><summary>Можно ли беременным, при диабете, при болезнях ЖКТ?</summary><p>Гайд и меню рассчитаны на здоровых взрослых и не заменяют консультацию врача. При беременности, кормлении и любых заболеваниях согласуй питание с лечащим врачом.</p></details>
-    <a class="btn" href="#guide" style="margin-top:18px">Хочу гайд за 870 ₽</a>
+    <details><summary>Как я получу гайд?</summary><p>Нажимаешь «Получить гайд», открывается Telegram-бот с кнопкой оплаты. Сразу после оплаты бот присылает гайд и меню на 7 дней. Если что-то пошло не так — напиши в бот, я отвечу.</p></details>
+    <details><summary>Можно ли при беременности, диабете, болезнях ЖКТ?</summary><p>Материалы рассчитаны на здоровых взрослых и не заменяют консультацию врача. При беременности, кормлении и любых заболеваниях согласуй питание с лечащим врачом.</p></details>
   </div>
 </section>
 
 <section style="padding-top:10px">
   <div class="wrap">
     <div class="tg">
-      <div class="author"><img src="assets/tatiana.jpg" alt="Татьяна"><div><b>Татьяна, нутрициолог</b><span class="small">Питание без диет и запретов</span></div></div>
-      <p>Пока не готова к гайду — подпишись на канал. Каждый день новый рецепт с граммовками и калориями на порцию, и как собрать из него тарелку.</p>
+      <div class="author"><img src="assets/hero.jpg" alt="Татьяна"><div><b>Татьяна, нутрициолог</b><span class="small">Питание без диет и запретов</span></div></div>
+      <p>Каждый день в канале — рецепт с порциями и калориями, разборы «почему срываемся» и опросы. Подпишись, чтобы не потерять.</p>
       <a class="btn ghost" href="https://t.me/foodnutric">Telegram-канал @foodnutric</a>
       <p class="small" style="margin:12px 0 0;text-align:center">Instagram: <a href="https://instagram.com/tatiana_nutri_" style="color:var(--terra)">@tatiana_nutri_</a></p>
     </div>
@@ -273,25 +293,19 @@ footer p{font-size:13px;color:var(--mut)}
 
 <footer>
   <div class="wrap">
-    <p>Материалы носят информационный характер и не заменяют консультацию врача. КБЖУ рассчитаны по средним табличным значениям.</p>
+    <p>Материалы носят информационный характер и не заменяют консультацию врача. Результат индивидуален.</p>
     <p><a href="https://disk.yandex.ru/i/qHkpM2NH3zodpg">Публичная оферта</a> · <a href="https://disk.yandex.ru/i/AmutearGn4g6xg">Политика конфиденциальности</a> · <a href="https://disk.yandex.ru/i/lu508php44lXtw">Согласие на обработку данных</a></p>
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="#guide">Гайд «7 шагов» — 870 ₽</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="#menu">Меню на 3 дня — бесплатно</a></div>
 
 <script>
 (function(){
-  var s=document.getElementById('sticky'),g=document.getElementById('guide'),a=document.querySelector('.article');
-  function upd(){
-    var y=window.scrollY,h=window.innerHeight;
-    var on=a&&y>a.offsetTop+300;
-    var gr=g.getBoundingClientRect();
-    if(gr.top<h&&gr.bottom>0) on=false;
-    var f=document.querySelector('footer').getBoundingClientRect(); if(f.top<h) on=false;
-    s.classList.toggle('on',!!on);
-  }
-  window.addEventListener('scroll',upd,{passive:true});upd();
+  var s=document.getElementById('sticky'),m=document.getElementById('menu'),g=document.getElementById('guide'),f=document.querySelector('footer');
+  function vis(el){var r=el.getBoundingClientRect();return r.top<innerHeight&&r.bottom>0}
+  function upd(){var on=scrollY>600&&!vis(m)&&!vis(g)&&!(f.getBoundingClientRect().top<innerHeight);s.classList.toggle('on',on)}
+  addEventListener('scroll',upd,{passive:true});upd();
 })();
 </script>
 </body>
