@@ -129,7 +129,7 @@ footer p{font-size:13px;color:var(--mut)}
 .logo span{color:var(--terra)}
 .top a.tg{font-size:14px;font-weight:800;color:var(--terra);text-decoration:none}
 .hero2{padding:8px 0 34px}
-.hero2 .ph{border-radius:22px;overflow:hidden;aspect-ratio:16/9;background:#eee center 20%/cover no-repeat;margin-bottom:18px;box-shadow:0 14px 40px rgba(60,40,25,.14)}
+.hero2 .ph{border-radius:22px;overflow:hidden;aspect-ratio:1/1;background:#eee center 12%/cover no-repeat;margin-bottom:18px;box-shadow:0 14px 40px rgba(60,40,25,.14)}
 .hero2 h1{margin-bottom:14px}
 .hero2 .lead2{font-size:18px;color:var(--soft);margin-bottom:22px}
 .btns{display:grid;gap:10px}
@@ -167,6 +167,7 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
 <!-- /Yandex.Metrika counter -->
 <style>
 .ck{position:fixed;left:12px;right:12px;bottom:12px;max-width:560px;margin:0 auto;background:#2B2522;color:#fff;border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.4;display:flex;gap:12px;align-items:center;z-index:9;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.sticky.on~.ck{bottom:calc(84px + env(safe-area-inset-bottom))}
 .ck a{color:#F3E3DA}.ck[hidden]{display:none!important}
 .ck button{flex:none;background:#B5543A;color:#fff;border:0;border-radius:10px;padding:9px 14px;font:inherit;font-weight:700;cursor:pointer}
 </style>
@@ -327,7 +328,7 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
 (function(){
   var s=document.getElementById('sticky'),m=document.getElementById('menu'),g=document.getElementById('guide'),f=document.querySelector('footer');
   function vis(el){var r=el.getBoundingClientRect();return r.top<innerHeight&&r.bottom>0}
-  function upd(){var on=scrollY>600&&!vis(m)&&!vis(g)&&!(f.getBoundingClientRect().top<innerHeight);s.classList.toggle('on',on)}
+  function upd(){var hb=document.querySelector('.hero2 .btns');var on=!vis(hb)&&!vis(m)&&!vis(g)&&!(f.getBoundingClientRect().top<innerHeight);s.classList.toggle('on',on)}
   addEventListener('scroll',upd,{passive:true});upd();
 })();
 </script>
