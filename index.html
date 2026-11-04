@@ -94,6 +94,8 @@ section{padding:44px 0}
 .inside i{font-style:normal;flex:none;width:30px;height:30px;border-radius:9px;background:var(--sage-l);display:flex;align-items:center;justify-content:center;font-size:16px}
 .days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:6px 0 18px}
 .days div{background:var(--terra-l);border-radius:9px;text-align:center;padding:8px 0;font-size:12px;font-weight:800;color:var(--terra)}
+.kit{font-size:16px;margin:4px 0 14px;color:var(--mut)}.kit span{color:var(--ink,#2b2420);font-weight:700;margin:0 2px}.kit b{color:inherit}
+.covers{display:flex;gap:12px;margin:6px 0 4px}.covers img{flex:1;min-width:0;max-width:200px;border-radius:12px;border:1px solid var(--line);box-shadow:0 8px 22px rgba(60,40,25,.10)}
 .price{display:flex;align-items:baseline;gap:12px;margin:8px 0 16px}
 .price b{font-family:Playfair,Georgia,serif;font-size:44px;white-space:nowrap}
 .price span{color:var(--mut);font-size:15px}
@@ -127,11 +129,11 @@ footer p{font-size:13px;color:var(--mut)}
 .logo span{color:var(--terra)}
 .top a.tg{font-size:14px;font-weight:800;color:var(--terra);text-decoration:none}
 .hero2{padding:8px 0 34px}
-.hero2 .ph{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:#eee center/cover no-repeat;margin-bottom:22px;box-shadow:0 14px 40px rgba(60,40,25,.14)}
+.hero2 .ph{border-radius:22px;overflow:hidden;aspect-ratio:16/9;background:#eee center 20%/cover no-repeat;margin-bottom:18px;box-shadow:0 14px 40px rgba(60,40,25,.14)}
 .hero2 h1{margin-bottom:14px}
 .hero2 .lead2{font-size:18px;color:var(--soft);margin-bottom:22px}
 .btns{display:grid;gap:10px}
-@media(min-width:760px){.hero2 .grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}.hero2 .ph{margin:0}.wrap.wide{max-width:980px}}
+@media(min-width:760px){.hero2 .grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}.hero2 .ph{margin:0;aspect-ratio:4/5;background-position:center}.wrap.wide{max-width:980px}}
 .pains{display:grid;gap:10px;margin:8px 0 0}
 .pains div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:17px}
 .cards{display:grid;gap:14px}
@@ -181,9 +183,10 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
       <h1>Похудеть без диет, запретов и срывов</h1>
       <p class="lead2">Я Татьяна, нутрициолог. Пять лет помогаю женщинам наладить питание так, чтобы было сытно, вкусно — и вес уходил без «начну с понедельника».</p>
       <div class="btns">
-        <a class="btn" href="#menu">Забрать меню на 3 дня — бесплатно</a>
+        <a class="btn" href="https://t.me/foodnutric_bot?start=free_site">Получить бесплатно</a>
         <a class="btn ghost" href="#guide">Гайд «Питание без диет: 7 шагов»</a>
       </div>
+      <p class="small" style="margin-top:10px">Меню на 3 дня, схема тарелки и чек-лист привычек — сразу в Telegram</p>
     </div>
   </div></div>
 </header>
@@ -237,15 +240,17 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
       <img src="assets/cover.jpg" alt="Меню на 3 дня" loading="lazy">
       <div>
         <div class="kicker">БЕСПЛАТНО</div>
-        <h2 style="margin-bottom:8px">Меню на 3 дня без диет</h2>
+        <h2 style="margin-bottom:8px">Меню на 3 дня + чек-лист</h2>
         <p>Чтобы попробовать, как это — есть сытно и при этом худеть.</p>
         <ul class="ticks">
-          <li>12 простых блюд с фото и пошаговыми рецептами</li>
-          <li>граммовки и калории на порцию</li>
-          <li>заготовка на 40 минут и список покупок</li>
+          <li>меню на 3 дня: 12 простых блюд с фото и пошаговыми рецептами</li>
+          <li>граммовки и калории на порцию, заготовка на 40 минут и список покупок</li>
+          <li>памятка со схемой тарелки</li>
+          <li>чек-лист привычек: с чего начать, чтобы питание наладилось</li>
         </ul>
-        <a class="btn" id="dl" href="menu.pdf" download="Меню на 3 дня без диет.pdf">⬇ Скачать меню (PDF)</a>
-        <p class="small" style="margin-top:8px;text-align:center">Без регистрации, сразу</p>
+        <a class="btn" href="https://t.me/foodnutric_bot?start=free_site">Получить бесплатно в Telegram →</a>
+        <p class="small" style="margin-top:8px;text-align:center">Откроется бот @foodnutric_bot и сразу пришлёт все три файла</p>
+        <p class="small" style="margin-top:6px;text-align:center">Нет Telegram? <a id="dl" style="color:inherit;text-decoration:underline" href="menu.pdf" download="Меню на 3 дня без диет.pdf">Скачать только меню (PDF)</a></p>
       </div>
     </div>
   </div>
@@ -254,8 +259,10 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
 <section class="guide" id="guide">
   <div class="wrap">
     <div class="gcard">
-      <div class="kicker">ГАЙД ОТ ТАТЬЯНЫ</div>
+      <div class="kicker">СЛЕДУЮЩИЙ ШАГ · КОМПЛЕКТ ИЗ ТРЁХ МАТЕРИАЛОВ</div>
       <h2 style="margin-bottom:10px">«Питание без диет: 7 шагов к результату»</h2>
+      <p class="kit">Гайд на 7 дней <span>+</span> меню на 7 дней <span>+</span> книга «Тарелка Татьяны», 20 рецептов — <b>всё вместе за одну цену</b></p>
+      <div class="covers"><img src="assets/menu7_cover.jpg" alt="Меню на 7 дней — обложка" loading="lazy"><img src="assets/book_cover.jpg" alt="Книга «Тарелка Татьяны» — обложка" loading="lazy"></div>
       <p>7 дней — по одному простому шагу в день, минут 15. Через неделю у тебя своя система питания, которую не нужно «выдерживать».</p>
       <div class="days"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div></div>
       <ul class="inside">
@@ -264,11 +271,11 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
         <li><i>📓</i><span><b>Дневник питания</b> — чтобы увидеть, где на самом деле «прячутся» лишнее и вечерний голод.</span></li>
         <li><i>🆘</i><span><b>Чек-лист «Что делать, если сорвалась»</b> — как вернуться в колею уже на следующем приёме пищи.</span></li>
         <li><i>🗓</i><span><b>Меню на 7 дней</b> — без весов, порции по руке, ужин сразу на завтрашний обед.</span></li>
-        <li><i>🎁</i><span><b>Подарок: книга «Тарелка Татьяны»</b> — 20 простых рецептов на каждый день с фото, калориями и заменами.</span></li>
+        <li><i>📖</i><span><b>Книга «Тарелка Татьяны»</b> — 20 простых рецептов на каждый день с фото, калориями и заменами.</span></li>
       </ul>
-      <div class="price"><b>870 ₽</b><span>один раз, файлы остаются у тебя</span></div>
-      <a class="btn" href="https://t.me/foodnutric_bot?start=guide_site">Получить гайд в Telegram →</a>
-      <p class="small" style="margin-top:10px;text-align:center">Откроется бот @foodnutric_bot: там оплата (карта, СБП), гайд приходит сразу после оплаты</p>
+      <div class="price"><b>870 ₽</b><span>за весь комплект, один раз — файлы остаются у тебя</span></div>
+      <a class="btn" href="https://t.me/foodnutric_bot?start=guide_site">Купить комплект в Telegram →</a>
+      <p class="small" style="margin-top:10px;text-align:center">Откроется бот @foodnutric_bot: там оплата (карта, СБП), все три файла приходят сразу после оплаты</p>
     </div>
     <div class="who">
       <div class="yes"><h3>Подойдёт, если</h3><ul>
@@ -291,7 +298,7 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
     <details><summary>Нужно ли взвешивать еду и считать калории?</summary><p>Нет. Основной инструмент — правило тарелки и порции «по руке»: ладонь белка, кулак гарнира, половина тарелки овощей. Калории в меню — ориентир, а не обязанность.</p></details>
     <details><summary>У меня нет времени готовить</summary><p>Блюда обычные, на 15–20 минут, а ужин сразу готовится на завтрашний обед. Отдельно для себя готовить не нужно — это еда для всей семьи.</p></details>
     <details><summary>Я уже пробовала — не получилось</summary><p>Скорее всего, ты пробовала диету — с запретами и терпением. Здесь нечего «выдерживать»: обычная еда, просто собранная иначе. Поэтому и срываться не с чего.</p></details>
-    <details><summary>Как я получу гайд?</summary><p>Нажимаешь «Получить гайд», открывается Telegram-бот с кнопкой оплаты. Сразу после оплаты бот присылает гайд, меню на 7 дней и книгу рецептов. Если что-то пошло не так — напиши в бот, я отвечу.</p></details>
+    <details><summary>Как я получу гайд?</summary><p>Нажимаешь «Купить комплект», открывается Telegram-бот с кнопкой оплаты. Сразу после оплаты бот присылает гайд, меню на 7 дней и книгу рецептов. Если что-то пошло не так — напиши в бот, я отвечу.</p></details>
     <details><summary>Можно ли при беременности, диабете, болезнях ЖКТ?</summary><p>Материалы рассчитаны на здоровых взрослых и не заменяют консультацию врача. При беременности, кормлении и любых заболеваниях согласуй питание с лечащим врачом.</p></details>
   </div>
 </section>
@@ -314,7 +321,7 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="#menu">Меню на 3 дня — бесплатно</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="https://t.me/foodnutric_bot?start=free_site">Меню на 3 дня + чек-лист — бесплатно</a></div>
 
 <script>
 (function(){
@@ -330,7 +337,8 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
   var k=document.getElementById('ck');try{if(!localStorage.getItem('ck'))k.hidden=false}catch(e){k.hidden=false}
   document.getElementById('ckok').onclick=function(){k.hidden=true;k.style.display='none';try{localStorage.setItem('ck','1')}catch(e){}};
   function g(sel,goal){var el=document.querySelectorAll(sel);for(var i=0;i<el.length;i++)el[i].addEventListener('click',function(){try{ym(113989180,'reachGoal',goal)}catch(e){}})}
-  g('a[href="menu.pdf"]','menu_download');g('a[href*="start=guide_site"]','guide_click');g('a[href="https://t.me/foodnutric"]','channel_click');g('#sticky a','sticky_click');
+  g('a[href="menu.pdf"]','menu_download');g('a[href*="start=free_site"]','free_click');g('a[href*="start=guide_site"]','guide_click');g('a[href="https://t.me/foodnutric"]','channel_click');g('#sticky a','sticky_click');
+  try{var gv=document.getElementById('guide'),done=false;new IntersectionObserver(function(e){if(!done&&e[0].isIntersecting){done=true;try{ym(113989180,'reachGoal','guide_view')}catch(x){}}},{threshold:.35}).observe(gv)}catch(e){}
 })();
 </script>
 </body>
