@@ -127,6 +127,12 @@ footer p{font-size:13px;color:var(--mut)}
 .top{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .logo{font-family:Playfair,Georgia,serif;font-weight:700;font-size:19px}
 .logo span{color:var(--terra)}
+.calc-top{font-size:14px;font-weight:800;color:var(--terra-d);text-decoration:none;background:var(--terra-l);border-radius:999px;padding:9px 14px;white-space:nowrap}
+.calcbox{display:flex;gap:16px;align-items:center;background:var(--terra-l);border-radius:22px;padding:22px 20px}
+.calcbox .ic{flex:none;width:64px;height:64px;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:34px}
+.calcbox h2{font-size:24px;margin-bottom:6px}
+.calcbox p{color:var(--soft);font-size:15.5px;margin-bottom:12px}
+@media(max-width:520px){.calcbox{flex-direction:column;align-items:flex-start}.calc-top .cw{display:none}.logo{font-size:17px}}
 .top a.tg{font-size:14px;font-weight:800;color:var(--terra);text-decoration:none}
 .hero2{padding:8px 0 34px}
 .hero2 .ph{border-radius:22px;overflow:hidden;aspect-ratio:1/1;background:#eee center 12%/cover no-repeat;margin-bottom:18px;box-shadow:0 14px 40px rgba(60,40,25,.14)}
@@ -174,7 +180,7 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
 </head>
 <body>
 
-<div class="wrap wide"><div class="top"><div class="logo">Татьяна <span>·</span> питание без диет</div><a class="tg" href="https://t.me/foodnutric">Telegram-канал →</a></div></div>
+<div class="wrap wide"><div class="top"><div class="logo">Татьяна <span>·</span> питание без диет</div><a class="calc-top" href="kalkulyator/">🧮 Калькулятор<span class="cw"> калорий</span></a></div></div>
 
 <header class="hero2">
   <div class="wrap wide"><div class="grid">
@@ -233,6 +239,20 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
       <div class="facts2"><span>5 лет практики</span><span>без диет и запретов</span><span>обычные продукты</span></div>
     </div>
   </div></div>
+</section>
+
+<section style="padding-top:6px">
+  <div class="wrap wide">
+    <div class="calcbox">
+      <div class="ic">🧮</div>
+      <div>
+        <div class="kicker">БЕСПЛАТНО · 1 МИНУТА</div>
+        <h2>Сколько калорий нужно именно вам?</h2>
+        <p>Калькулятор посчитает норму, чтобы вес стоял, норму, чтобы худеть без голода, сколько нужно белка — и сколько можно сладкого каждый день.</p>
+        <a class="btn" href="kalkulyator/" id="calc_btn">Посчитать свою норму →</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="menu" style="padding-top:6px">
@@ -340,7 +360,7 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
   var k=document.getElementById('ck');try{if(!localStorage.getItem('ck'))k.hidden=false}catch(e){k.hidden=false}
   document.getElementById('ckok').onclick=function(){k.hidden=true;k.style.display='none';try{localStorage.setItem('ck','1')}catch(e){}};
   function g(sel,goal){var el=document.querySelectorAll(sel);for(var i=0;i<el.length;i++)el[i].addEventListener('click',function(){try{ym(113989180,'reachGoal',goal)}catch(e){}})}
-  g('a[href="menu.pdf"]','menu_download');g('a[href*="start=free_site"]','free_click');g('a[href*="start=guide_site"]','guide_click');g('a[href="https://t.me/foodnutric"]','channel_click');g('#sticky a','sticky_click');
+  g('a[href="menu.pdf"]','menu_download');g('a[href*="start=free_site"]','free_click');g('a[href*="start=guide_site"]','guide_click');g('a[href="https://t.me/foodnutric"]','channel_click');g('#sticky a','sticky_click');g('a[href="kalkulyator/"]','calc_open');
   try{var gv=document.getElementById('guide'),done=false;new IntersectionObserver(function(e){if(!done&&e[0].isIntersecting){done=true;try{ym(113989180,'reachGoal','guide_view')}catch(x){}}},{threshold:.35}).observe(gv)}catch(e){}
 })();
 </script>
