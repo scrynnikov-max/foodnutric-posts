@@ -127,6 +127,9 @@ footer p{font-size:13px;color:var(--mut)}
 .top{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .logo{font-family:Playfair,Georgia,serif;font-weight:700;font-size:19px}
 .logo span{color:var(--terra)}
+.payf input{width:100%;padding:14px;border:1.5px solid var(--line);border-radius:14px;font:600 16px Manrope,sans-serif;margin-bottom:10px;background:#fff;color:var(--ink)}
+.payf input:focus{outline:none;border-color:var(--terra)}
+.or{display:flex;align-items:center;gap:10px;color:var(--mut);font-size:13px;margin:14px 0}.or:before,.or:after{content:"";flex:1;height:1px;background:var(--line)}
 .calc-top{font-size:14px;font-weight:800;color:var(--terra-d);text-decoration:none;background:var(--terra-l);border-radius:999px;padding:9px 14px;white-space:nowrap}
 .calcbox{display:flex;gap:16px;align-items:center;background:var(--terra-l);border-radius:22px;padding:22px 20px}
 .calcbox .ic{flex:none;width:64px;height:64px;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:34px}
@@ -297,7 +300,16 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
         <li><i>📖</i><span><b>Книга «Тарелка Татьяны»</b> — 20 простых рецептов на каждый день с фото, калориями и заменами.</span></li>
       </ul>
       <div class="price"><b>870 ₽</b><span>стартовая цена до 30 ноября — с 1 декабря комплект будет стоить 1 450 ₽. Оплата один раз, файлы остаются у тебя</span></div>
-      <a class="btn" href="https://t.me/foodnutric_bot?start=guide_site">Купить комплект в Telegram →</a>
+      <div id="paysite" hidden>
+        <form id="payform" class="payf" novalidate>
+          <input id="payemail" type="email" inputmode="email" autocomplete="email" placeholder="Ваш email — для чека" required>
+          <button class="btn" id="paybtn" type="submit">Оплатить на сайте — карта или СБП</button>
+          <p class="small" id="payerr" style="color:var(--terra-d);display:none;margin-top:8px"></p>
+          <p class="small" style="margin-top:8px">Сразу после оплаты откроется страница со ссылками на гайд, меню и книгу. Нажимая «Оплатить», вы соглашаетесь с <a href="https://disk.yandex.ru/i/qHkpM2NH3zodpg" style="color:inherit">офертой</a> и <a href="privacy.pdf" style="color:inherit">политикой обработки данных</a>.</p>
+        </form>
+        <div class="or"><span>или</span></div>
+      </div>
+      <a class="btn" id="tgbuy" href="https://t.me/foodnutric_bot?start=guide_site">Купить комплект в Telegram →</a>
       <p class="small" style="margin-top:10px;text-align:center">Откроется бот @foodnutric_bot: там оплата (карта, СБП), все три файла приходят сразу после оплаты</p>
     </div>
     <div class="who">
@@ -362,6 +374,27 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
   function g(sel,goal){var el=document.querySelectorAll(sel);for(var i=0;i<el.length;i++)el[i].addEventListener('click',function(){try{ym(113989180,'reachGoal',goal)}catch(e){}})}
   g('a[href="menu.pdf"]','menu_download');g('a[href*="start=free_site"]','free_click');g('a[href*="start=guide_site"]','guide_click');g('a[href="https://t.me/foodnutric"]','channel_click');g('#sticky a','sticky_click');g('a[href="kalkulyator/"]','calc_open');
   try{var gv=document.getElementById('guide'),done=false;new IntersectionObserver(function(e){if(!done&&e[0].isIntersecting){done=true;try{ym(113989180,'reachGoal','guide_view')}catch(x){}}},{threshold:.35}).observe(gv)}catch(e){}
+})();
+</script>
+<script>
+(function(){
+  var FN='';  // ссылка на функцию Yandex Cloud
+  if(!FN) return;
+  var box=document.getElementById('paysite'); box.hidden=false;
+  var tg=document.getElementById('tgbuy'); tg.className='btn ghost'; tg.textContent='Оплатить в Telegram →';
+  var f=document.getElementById('payform'), b=document.getElementById('paybtn'), er=document.getElementById('payerr');
+  f.onsubmit=function(ev){ev.preventDefault();
+    var em=document.getElementById('payemail').value.trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){er.textContent='Проверьте email — на него придёт чек';er.style.display='block';return}
+    er.style.display='none'; b.disabled=true; b.textContent='Переходим к оплате…';
+    try{ym(113989180,'reachGoal','pay_site_click')}catch(e){}
+    fetch(FN+'?action=create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})})
+      .then(function(r){return r.json()}).then(function(d){
+        if(!d.url) throw new Error(d.error||'Ошибка');
+        try{localStorage.setItem('pay_'+d.t,d.pid)}catch(e){}
+        location.href=d.url;
+      }).catch(function(e){er.textContent=e.message||'Не получилось, попробуйте ещё раз';er.style.display='block';b.disabled=false;b.textContent='Оплатить на сайте — карта или СБП'});
+  };
 })();
 </script>
 </body>
