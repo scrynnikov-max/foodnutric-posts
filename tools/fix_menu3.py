@@ -25,7 +25,7 @@ page.add_redact_annot(rect,fill=bg)
 page.apply_redactions(images=0,graphics=0,text=0)
 font="/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 page.insert_font(fontname="dv",fontfile=font)
-assert page.insert_textbox(rect,"Накануне — заготовка на 40 минут (стр. 4). Время приготовления отдельных блюд — от 15 до 45 минут.",fontname="dv",fontsize=9,lineheight=1.5,color=(.19,.23,.2))>=0
+assert page.insert_textbox(rect,"Накануне — заготовка на 40 минут (стр. 4). Время приготовления отдельных блюд — от 15 до 45 минут.",fontname="dv",fontsize=7.5,lineheight=1.3,color=(.19,.23,.2))>=0
 doc.save("menu-new.pdf",garbage=4,deflate=True)
 check=fitz.open("menu-new.pdf")
 assert len(check)==21
