@@ -1,0 +1,28 @@
+name: Publish corrected 3-day menu
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/fix_menu3.py
+      - .github/workflows/fix-menu3.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'PyMuPDF>=1.24,<2'
+      - name: Patch and validate menu PDF
+        run: python tools/fix_menu3.py
+      - name: Commit corrected menu
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add menu.pdf
+          git commit -m "Publish corrected free 3-day menu"
+          git push
