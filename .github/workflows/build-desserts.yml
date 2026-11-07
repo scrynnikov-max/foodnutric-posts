@@ -1,0 +1,33 @@
+name: Publish reviewed dessert booklet
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/desserts_source.md'
+      - 'tools/build_desserts.py'
+      - '.github/workflows/build-desserts.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'reportlab>=4,<5' 'PyMuPDF>=1.24,<2'
+      - name: Rebuild PDF and verify
+        run: python tools/build_desserts.py
+      - name: Publish PDF in repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add desserts.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish reviewed free dessert booklet"
+            git push
+          fi

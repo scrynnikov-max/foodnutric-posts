@@ -461,7 +461,7 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
     <div class="free-txt">
       <p class="kicker" data-r>Бесплатно</p>
       <h2 class="h2" data-r>15 десертов, меню на&nbsp;3&nbsp;дня <em>и&nbsp;чек-лист</em></h2>
-      <p data-r>Чтобы попробовать, как это — есть сытно, со сладким каждый день, и при этом худеть.</p>
+      <p data-r>Попробуй простые рецепты и идеи для обычного питания без строгих запретов.</p>
       <ul class="ticks" data-r>
         <li>книга «15 десертов на каждый день»: сладкое с фото и КБЖУ на порцию</li>
         <li>меню на 3 дня: 12 простых блюд с фото и пошаговыми рецептами</li>
@@ -471,7 +471,7 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
       <div data-r>
         <a class="btn" href="https://t.me/foodnutric_bot?start=free_site"><span>Получить бесплатно в Telegram</span><i aria-hidden="true">→</i></a>
         <p class="note">Откроется бот @foodnutric_bot и сразу пришлёт все файлы</p>
-        <p class="note">Нет Telegram? <a id="dl" href="/menu.pdf" download="Меню на 3 дня без диет.pdf">Скачать только меню (PDF)</a> · <a href="/kalkulyator/">Посчитать норму калорий</a></p>
+        <p class="note">Нет Telegram? <a id="dessertdl" href="/desserts.pdf" download="15 десертов на каждый день.pdf">Скачать книгу «15 десертов» (PDF)</a> · <a id="dl" href="/menu.pdf" download="Меню на 3 дня без диет.pdf">Скачать меню (PDF)</a></p><p class="note"><a href="/kalkulyator/">Посчитать норму калорий</a> · <a href="#guide">Посмотреть комплект на 7 дней</a></p>
       </div>
     </div>
   </div>
@@ -593,7 +593,7 @@ ym(113989180,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
   var k=document.getElementById('ck');try{if(!localStorage.getItem('ck'))k.hidden=false}catch(e){k.hidden=false}
   document.getElementById('ckok').onclick=function(){k.hidden=true;k.style.display='none';try{localStorage.setItem('ck','1')}catch(e){}};
   function g(sel,goal){var el=document.querySelectorAll(sel);for(var i=0;i<el.length;i++)el[i].addEventListener('click',function(){try{ym(113989180,'reachGoal',goal)}catch(e){}})}
-  g('a[href="/menu.pdf"]','menu_download');g('a[href*="start=free_site"]','free_click');g('a[href*="start=guide_site"]','guide_click');g('a[href="https://t.me/foodnutric"]','channel_click');g('#sticky a','sticky_click');g('a[href="/kalkulyator/"]','calc_open');
+  g('a[href="/menu.pdf"]','menu_download');g('a[href="/desserts.pdf"]','desserts_download');g('a[href*="start=free_site"]','free_click');g('a[href*="start=guide_site"]','guide_click');g('a[href="https://t.me/foodnutric"]','channel_click');g('#sticky a','sticky_click');g('a[href="/kalkulyator/"]','calc_open');
   try{var gv=document.getElementById('guide'),done=false;new IntersectionObserver(function(e){if(!done&&e[0].isIntersecting){done=true;try{ym(113989180,'reachGoal','guide_view')}catch(x){}}},{threshold:.2}).observe(gv)}catch(e){}
 })();
 </script>
