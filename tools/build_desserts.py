@@ -17,7 +17,7 @@ from reportlab.lib.units import mm
 
 ROOT=Path(__file__).resolve().parent.parent
 SOURCE=(ROOT/'tools/desserts_source.md').read_text(encoding='utf-8')
-OLD=ROOT/'desserts.pdf'
+OLD=ROOT/'tools/previous_desserts.pdf'
 OUTPUT=ROOT/'desserts.pdf'
 font='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 bold='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
@@ -90,6 +90,12 @@ if OLD.exists():
             except Exception:pass
         if candidates:
             photos[i+1]=max(candidates,key=lambda x:x[0])[1]
+        else:
+            # Original edition may flatten images into PDF drawing commands.
+            # Rasterize only the top photograph area, not the old recipe text.
+            crop=fitz.Rect(0,0,page.rect.width,page.rect.height*0.405)
+            pix=page.get_pixmap(matrix=fitz.Matrix(1.8,1.8),clip=crop,alpha=False)
+            photos[i+1]=pix.tobytes('png')
     print('previous pages',len(old),'recipe photos recovered',len(photos))
 def image_for(n,maxw=123*mm,maxh=55*mm):
     data=photos.get(n)
