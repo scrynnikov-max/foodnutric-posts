@@ -16,10 +16,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install 'reportlab>=4,<5' 'PyMuPDF>=1.24,<2'
+      - name: Restore original photo-rich edition for image extraction
+        run: |
+          git show 0e717fcb6090c9b22a1bc3d0780453695e0e2ed7:desserts.pdf > tools/previous_desserts.pdf
       - name: Rebuild PDF and verify
         run: python tools/build_desserts.py
       - name: Publish PDF in repository
