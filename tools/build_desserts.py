@@ -39,7 +39,7 @@ styles={
  'center':ParagraphStyle('center',fontName='DV',fontSize=9,leading=13,textColor=INK,alignment=TA_CENTER),
 }
 def P(t,style='body'):
-    t=html.escape(t).replace('&lt;b&gt;','<b>').replace('&lt;/b&gt;','</b>')
+    t=t
     return Paragraph(t,styles[style])
 def inline(s):
     return re.sub(r'\*\*(.*?)\*\*',r'<b>\1</b>',html.escape(s))
