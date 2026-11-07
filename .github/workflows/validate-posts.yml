@@ -1,0 +1,24 @@
+name: Validate Telegram post queue
+on:
+  push:
+    branches: [main]
+    paths:
+      - posts.json
+      - 'tools/validate_posts.py'
+      - '.github/workflows/validate-posts.yml'
+  pull_request:
+    paths:
+      - posts.json
+      - 'tools/validate_posts.py'
+      - '.github/workflows/validate-posts.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 tools/validate_posts.py
